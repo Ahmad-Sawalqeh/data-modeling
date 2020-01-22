@@ -1,0 +1,27 @@
+{
+  "name": "data-modeling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "memory-data-model.js",
+  "scripts": {
+    "lint": "eslint **/.js",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmad-Sawalqeh/data-modeling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmad-Sawalqeh/data-modeling/issues"
+  },
+  "homepage": "https://github.com/Ahmad-Sawalqeh/data-modeling#readme",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "uuid": "^3.4.0"
+  }
+}
