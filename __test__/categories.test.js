@@ -1,48 +1,69 @@
 'use strict';
 
-const Product = require('../models/product.modular.js');
+const Categories = require('../categories/categories.js');
+// const validator = require('../validator.js');
 
-describe('Product Model', () => {
+let categories;
 
-  let product;
+beforeEach(() => {
+  categories = new Categories();
+});
 
-  beforeEach(() => {
-    product = new Product();
-  });
+describe('Categories Model', () => {
 
-  it('can post() a new product item', () => {
-    let obj = {
-      price: 56,
-      weight: 24,
-      quantity_in_stock: 8
-    };
-    // category_id: { required: 'string' },
-
-    return product.create(obj)
+  it('can post() a new category', () => {
+    let obj = { name: 'Test Category' };
+    return categories.create(obj)
       .then(record => {
         Object.keys(obj).forEach(key => {
           expect(record[key]).toEqual(obj[key]);
-        })
+        });
       })
-      .catch(err => console.error(err))
-  })
+      .catch(e => console.error('ERR', e));
+  }); // end of create method 
 
-  it('can get() a product item', () => {
-    let obj = {
-      price: 56,
-      weight: 24,
-      quantity_in_stock: 8
-    };
-    // category_id: { required: 'string' },
-
-    return product.create(obj)
+  it('can get() a category', () => {
+    let obj = { name: 'Test Category' };
+    return categories.create(obj)
       .then(record => {
-        return product.get(record.id)
-          .then(product => {
+        return categories.get(record._id)
+          .then(category => {
             Object.keys(obj).forEach(key => {
-              expect(product[0][key]).toEqual(obj[key]);
+              expect(category[0][key]).toEqual(obj[key]);
+            });
+          });
+      })
+      .catch(e => console.error('ERR', e));
+  }); // end of get method 
+
+  it('can update() a category', () => {
+    let obj = { name: 'Test Category' };
+    return categories.create(obj)
+      .then(record => {
+        categories.get(record)
+        categories.update(record._id,record)
+          .then(category => {
+            Object.keys(obj).forEach(key => {
+              expect(category[key]).toEqual(obj[key]);
             })
           })
       })
-  });
-});
+      .catch(e => console.error('ERR', e));
+  }); // end of update method 
+
+  it('can delete() a category', () => {
+    let obj = { name: 'Test Category' };
+    return categories.create(obj)
+      .then(record => {
+        categories.get(record)
+        categories.delete(record._id)
+          .then(category => {
+            Object.keys(obj).forEach(key => {
+              expect(category[key]).toEqual(obj[key]);
+            })
+          })
+      })
+      .catch(e => console.error('ERR', e));
+  }); // end of delete method 
+
+}); // end of Categories Model
