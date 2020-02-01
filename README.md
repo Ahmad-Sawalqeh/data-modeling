@@ -1,13 +1,13 @@
 # data-modeling
 
-# LAB - Class 03
+# LAB - Class 04
 
 ### Author: Ahmad Sawalqeh
 
 ### Links and Resources
 
 - [submission PR](https://github.com/Ahmad-Sawalqeh/data-modeling/pull/1)
-- [ci/cd](https://github.com/Ahmad-Sawalqeh/data-modeling/commit/49a53840a8fc992bc52136208eccc9aa0c69697f/checks?check_suite_id=414188592) (GitHub Actions)
+- [ci/cd](https://github.com/Ahmad-Sawalqeh/data-modeling/runs/406640219?check_suite_focus=true) (GitHub Actions)
 
 ### Setup
 run `npm i`
@@ -19,3 +19,7 @@ run `npm test` to check all test.
 
 - How do you run tests?<br>
   run `npm test`
+
+# UML
+
+![](./assets/CRUD-validator.jpeg)
