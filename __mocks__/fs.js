@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 module.exports = exports = {};
@@ -9,7 +10,7 @@ exports.readFile = (file, cb) => {
     cb('Invalid File');
   }
   else {
-    cb(undefined, Buffer.from(fileContents));
+    cb(null, Buffer.from(fileContents));
   }
 };
 
@@ -19,6 +20,6 @@ exports.writeFile = (file, buffer, cb) => {
   }
   else {
     fileContents = buffer;
-    cb(undefined, true);
+    cb(null, true);
   }
 };

@@ -1,13 +1,13 @@
 # data-modeling
 
-# LAB - Class 03
+# LAB - Class 04
 
 ### Author: Ahmad Sawalqeh
 
 ### Links and Resources
 
-- [submission PR]()
-- [ci/cd]() (GitHub Actions)
+- [submission PR](https://github.com/Ahmad-Sawalqeh/data-modeling/pull/1)
+- [ci/cd](https://github.com/Ahmad-Sawalqeh/data-modeling/runs/406640219?check_suite_focus=true) (GitHub Actions)
 
 ### Setup
 run `npm i`

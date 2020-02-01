@@ -1,3 +1,6 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 'use strict';
 
 const Products = require('../products/products.js');
@@ -11,7 +14,7 @@ beforeEach(() => {
 describe('Products  Model', () => {
 
   it('can post() a new products', () => {
-    let obj = { price: 31, weight: 15, quantity_in_stock: 13 };
+    let obj = { price: 31, weight: 15, quantity_in_stock: 13, };
     return products.create(obj)
       .then(record => {
         Object.keys(obj).forEach(key => {
@@ -22,7 +25,7 @@ describe('Products  Model', () => {
   });
 
   it('can get() a products', () => {
-    let obj = { price: 31, weight: 15, quantity_in_stock: 13 };
+    let obj = { price: 31, weight: 15, quantity_in_stock: 13, };
     return products.create(obj)
       .then(record => {
         return products.get(record._id)
@@ -35,31 +38,31 @@ describe('Products  Model', () => {
   });
 
   it('can update() a product', () => {
-    let obj = { price: 31, weight: 15, quantity_in_stock: 13 };
+    let obj = { price: 31, weight: 15, quantity_in_stock: 13, };
     return products.create(obj)
       .then(record => {
-        products.get(record)
+        products.get(record);
         products.update(record._id, record)
           .then(prod => {
             Object.keys(obj).forEach(key => {
               expect(prod[key]).toEqual(obj[key]);
-            })
-          })
+            });
+          });
       })
       .catch(error => console.error('Error : Something Goes Wrong', error));
-  }); // end of update method 
+  }); // end of update method
 
   it('can delete() a product', () => {
-    let obj = { price: 31, weight: 15, quantity_in_stock: 13 };
+    let obj = { price: 31, weight: 15, quantity_in_stock: 13, };
     return products.create(obj)
       .then(record => {
-        products.get(record)
+        products.get(record);
         products.delete(record._id)
           .then(prod => {
             Object.keys(obj).forEach(key => {
               expect(prod[key]).toEqual(obj[key]);
-            })
-          })
+            });
+          });
       })
       .catch(error => console.error('Error : Something Goes Wrong', error));
   });
